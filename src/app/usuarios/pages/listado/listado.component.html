@@ -1,1 +1,18 @@
-<p>listado works!</p>
+<table mat-table>
+    <th>ID</th>
+    <th>DNI</th>
+    <th>Nombres</th>
+    <th>Telefono</th>
+    <th>Correo</th>
+    <th>Ciudad</th>
+    <th>Fecha de registro</th>
+    <tr *ngFor="let u of usuarios">
+        <td>{{u.IdUsuario}}</td>
+        <td>{{ u.DocumentoIdentidad }}</td>
+        <td>{{ u.Nombres }}</td>
+        <td>{{ u.Telefono }}</td>
+        <td>{{ u.Correo }}</td>
+        <td>{{ u.Ciudad }}</td>
+        <td>{{ u.FechaRegistro }}</td>
+    </tr>
+</table>
