@@ -1,1 +1,68 @@
-<p>agregar works!</p>
+<h1>
+    {{ ( usuario.IdUsuario) ? 'Editar' : 'Agregar' }}
+    Usuario
+</h1>
+<br>
+<div class="container" >
+    <mat-form-field [color]="color">
+        <mat-label>Documento de identidad</mat-label>
+        <input matInput 
+               type="number"
+               [(ngModel)]="usuario.DocumentoIdentidad"
+               required
+               >
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Nombres</mat-label>
+        <input matInput 
+               type="text"
+               [(ngModel)]="usuario.Nombres"
+               required>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Teléfono</mat-label>
+        <input matInput 
+               type="text"
+               [(ngModel)]="usuario.Telefono"
+               required>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo</mat-label>
+        <input matInput 
+               type="text"
+               [(ngModel)]="usuario.Correo"
+               required>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Ciudad</mat-label>
+        <input matInput 
+               type="text"
+               [(ngModel)]="usuario.Ciudad"
+               required>
+    </mat-form-field>
+    <!-- <mat-form-field [color]="color">
+        <mat-label>Fecha de registro</mat-label>
+        <input matInput 
+               type="date"
+               asp-for="MyDate" asp-format="{0:yyyy-MM-dd}"
+               [(ngModel)]="usuario.FechaRegistro"
+               required>
+    </mat-form-field> -->
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="guardar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            <!-- Guardar -->
+            {{ ( usuario.IdUsuario) ? 'Actualizar' : 'Crear' }} 
+</button>
+<!-- <span class="spacer"></span> -->
+    <button mat-raised-button
+            color="warn"
+            *ngIf="usuario.IdUsuario"
+            (click)="borrarUsuario()">
+    <mat-icon> delete </mat-icon>
+    Borrar
+</button>

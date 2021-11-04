@@ -1,0 +1,35 @@
+<h1>
+    Agregar fabricante
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>ID</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="fabricante.fabricante">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Nombre</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="fabricante.nombre">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>¿Está bloqueado?</mat-label>
+        <mat-select [(ngModel)]="fabricante.bloqueado">
+            <mat-option value=1>Sí</mat-option>
+            <mat-option value=0>No</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="guardar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Crear 
+</button>

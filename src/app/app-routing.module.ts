@@ -8,6 +8,10 @@ const rutas: Routes = [
     loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosModule )
   },
   {
+    path: 'fabricantes',
+    loadChildren: () => import('./fabricantes/fabricantes.module').then(m => m.FabricantesModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },

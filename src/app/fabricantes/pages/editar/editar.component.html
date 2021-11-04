@@ -1,0 +1,27 @@
+<h1>
+    Editar fabricante
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>Nombre</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="fabricante.nombre">
+    </mat-form-field>
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="editar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Actualizar
+</button>
+    <button mat-raised-button
+            color="warn"
+            (click)="borrar()">
+    <mat-icon> delete </mat-icon>
+    Borrar
+</button>

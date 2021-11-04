@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ListadoComponent } from './pages/listado/listado.component';
-import { UsuarioComponent } from './pages/usuario/usuario.component';
+// import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { HomeComponent } from './pages/home/home.component';
 
@@ -22,10 +22,6 @@ const rutas: Routes = [
       {
         path:'editar/:id',
         component: AgregarComponent
-      },
-      {
-        path:':id',
-        component: UsuarioComponent
       },
       {
         path:'**',
