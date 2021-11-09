@@ -10,7 +10,8 @@ import { EditarComponent } from '../editar/editar.component';
   templateUrl: './listado.component.html',
   styles: [`
   table {
-  width: 100%;
+    width: 100%;
+    overflow-x: auto;
   }`
   ]
 })

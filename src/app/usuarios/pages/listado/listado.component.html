@@ -1,6 +1,6 @@
 <!-- <button mat-button 0>Open dialog</button> -->
-<mat-sidenav-container fullscreen>
-<h1>Usuarios</h1>
+<!-- <mat-sidenav-container fullscreen> -->
+<!-- <h1>Usuarios</h1> -->
 <button (click)="agregarUsuario()" mat-raised-button color="accent">
   <mat-icon>add</mat-icon>
   Nuevo
@@ -8,28 +8,30 @@
 </button>
 <br>
 <br>
-<!-- <table style="text-align: center;">
-  <th>ID</th>
-  <th>DNI</th>
-  <th>Nombres</th>
-  <th>Telefono</th>
-  <th>Correo</th>
-  <th>Ciudad</th>
-  <th>Fecha de registro</th>
-  <th>Última actualización</th>
-  <th>Editar</th>
-  <tr *ngFor="let u of usuarios">
-    <td>{{ u.IdUsuario }}</td>
-    <td>{{ u.DocumentoIdentidad }}</td>
-    <td>{{ u.Nombres }}</td>
-    <td>{{ u.Telefono }}</td>
-    <td>{{ u.Correo }}</td>
-    <td>{{ u.Ciudad }}</td>
-    <td>{{ u.FechaRegistro | date:'yyyy-MM-dd' }}</td>
-    <td>{{ u.UltimaModificacion | date:'yyyy-MM-dd' }}</td>
-    <td><button mat-button (click)="editarUsuario(u)"><mat-icon>edit</mat-icon></button></td>
-  </tr>
-</table> -->
+  <table style="text-align: center;" class="responsive-table">
+    <th>ID</th>
+    <th>DNI</th>
+    <th>Nombres</th>
+    <th>Telefono</th>
+    <th>Correo</th>
+    <th>Ciudad</th>
+    <th>Fecha de registro</th>
+    <th>Última actualización</th>
+    <th>Editar</th>
+    <tr *ngFor="let u of usuarios">
+      <td>{{ u.IdUsuario }}</td>
+      <td>{{ u.DocumentoIdentidad }}</td>
+      <td>{{ u.Nombres }}</td>
+      <td>{{ u.Telefono }}</td>
+      <td>{{ u.Correo }}</td>
+      <td>{{ u.Ciudad }}</td>
+      <td>{{ u.FechaRegistro | date:'yyyy-MM-dd' }}</td>
+      <td>{{ u.UltimaModificacion | date:'yyyy-MM-dd' }}</td>
+      <td><button mat-button (click)="editarUsuario(u)"><mat-icon>edit</mat-icon></button></td>
+    </tr>
+  </table>
+  
+
 
 <!-- <table mat-table [dataSource]="usuarios" class="mat-elevation-z8" #tabla1>
 
@@ -60,29 +62,25 @@
     <tr mat-header-row *matHeaderRowDef="columnas"></tr>
     <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
   </table> -->
-
+<!-- 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="usuarios">
   
-      <!-- Position Column -->
       <ng-container matColumnDef="IdUsuario">
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let u"> {{u.IdUsuario}} </td>
       </ng-container>
   
-      <!-- Name Column -->
       <ng-container matColumnDef="DocumentoIdentidad">
         <th mat-header-cell *matHeaderCellDef> DNI </th>
         <td mat-cell *matCellDef="let u"> {{u.DocumentoIdentidad}} </td>
       </ng-container>
   
-      <!-- Weight Column -->
       <ng-container matColumnDef="Nombres">
         <th mat-header-cell *matHeaderCellDef> Nombres </th>
         <td mat-cell *matCellDef="let u"> {{u.Nombres}} </td>
       </ng-container>
   
-      <!-- Symbol Column -->
       <ng-container matColumnDef="Telefono">
         <th mat-header-cell *matHeaderCellDef> Telefono </th>
         <td mat-cell *matCellDef="let u"> {{u.Telefono}} </td>
@@ -114,10 +112,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
-    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons 
-                   aria-label="Select page of periodic elements">
-    </mat-paginator> -->
   </div>
-</mat-sidenav-container>
+   -->
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator> -->
+  <!-- </mat-sidenav-container> -->

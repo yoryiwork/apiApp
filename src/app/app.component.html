@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar>
+            <span>Menú</span>
+            <span class="spacer"></span>
+            <button mat-icon-button
+            (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a routerLink="./usuarios"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>supervisor_account</mat-icon>
+                <span>Usuarios</span>
+            </a>
+            <a routerLink="./fabricantes"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>build_circle</mat-icon>
+                <span>Fabricantes</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar>
+        <button mat-icon-button
+        (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        Cronos
+        <span class="spacer"></span>
+    </mat-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet> 
+    </div>
+        
+</mat-sidenav-container>
