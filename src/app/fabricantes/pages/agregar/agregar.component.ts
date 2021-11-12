@@ -37,7 +37,7 @@ export class AgregarComponent implements OnInit {
         this.router.navigate(['fabricantes']);
         this.mostrarSnakbar( 'Registro creado' )
       })
-    window.location.reload();
+    // window.location.reload();
   }
 
 }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class FabricantesService {
 
-  apiFabricantes: string = '';
+  apiFabricantes: string = 'https://192.168.10.2/fabricantes';
 
   constructor( private http: HttpClient ) { }
 
