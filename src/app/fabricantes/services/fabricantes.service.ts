@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class FabricantesService {
 
-  apiFabricantes: string = 'https://192.168.10.2/fabricantes';
+  apiFabricantes: string = 'https://192.168.10.2/fabricantes/';
+  // apiFabricantes: string = 'https://192.168.10.150:44348/fabricantes';
 
   constructor( private http: HttpClient ) { }
 
@@ -20,8 +21,8 @@ export class FabricantesService {
     return this.http.post<Fabricante>(this.apiFabricantes, fabricante);
   }
 
-  actualizarFabricante( usuario:Fabricante ): Observable<Fabricante>{
-    return this.http.put<Fabricante>(this.apiFabricantes , usuario);
+  actualizarFabricante( fabricante:Fabricante ): Observable<Fabricante>{
+    return this.http.put<Fabricante>(this.apiFabricantes , fabricante);
   }
 
   borrarFabricante( id: string ): Observable<any>{
