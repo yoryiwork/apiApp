@@ -12,6 +12,10 @@ const rutas: Routes = [
     loadChildren: () => import('./fabricantes/fabricantes.module').then(m => m.FabricantesModule)
   },
   {
+    path: 'clavesSat',
+    loadChildren: () => import('./claves-sat/claves-sat.module').then(m => m.ClavesSATModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },

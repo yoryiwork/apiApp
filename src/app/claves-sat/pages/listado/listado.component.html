@@ -1,1 +1,22 @@
-<p>listado works!</p>
+<h1>Claves SAT</h1>
+
+<button (click)="agregarClaveSat()" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>
+    Nuevo
+</button>
+<br>
+<br>
+<table style="text-align: center;" class="responsive-table">
+    <th>Código</th>
+    <th>Descripción</th>
+    <th>Editar</th>
+    <tr *ngFor="let c of clavesSat">
+        <td>{{ c.codigo }}</td>
+        <td>{{ c.descripcion }}</td>
+        <td>
+            <button mat-button (click)="editarClaveSat(c)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>
