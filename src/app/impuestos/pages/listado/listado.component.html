@@ -1,0 +1,34 @@
+<h1>Impuestos</h1>
+
+<button (click)="agregarImpuesto()" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>
+    Nuevo
+</button>
+<br>
+<br>
+<table style="text-align: center;" class="responsive-table">
+    <th>ID</th>
+    <th>Descripción</th>
+    <th>Valor</th>
+    <th>Usuario</th>
+    <th>Tasa</th>
+    <th>Cuota Tasa</th>
+    <th>Tipo</th>
+    <th>¿Está bloqueado?</th>
+    <th>Editar</th>
+    <tr *ngFor="let i of impuestos">
+        <td>{{ i.impuesto }}</td>
+        <td>{{ i.descrip }}</td>
+        <td>{{ i.valor }}</td>
+        <td>{{ i.usuario }}</td>
+        <td>{{ i.tasa }}</td>
+        <td>{{ i.tasaCuota }}</td>
+        <td>{{ i.tipoImpuesto }}</td>
+        <td>{{ (i.bloqueado != 0) ? 'Sí' : 'No' }}</td>
+        <td>
+            <button mat-button (click)="editarImpuesto(i)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

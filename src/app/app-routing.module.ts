@@ -16,6 +16,10 @@ const rutas: Routes = [
     loadChildren: () => import('./claves-sat/claves-sat.module').then(m => m.ClavesSATModule)
   },
   {
+    path: 'impuestos',
+    loadChildren: () => import('./impuestos/impuestos.module').then(m => m.ImpuestosModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },
