@@ -69,10 +69,10 @@ export class AgregarComponent implements OnInit {
       this.usuariosService.agregarUsuario( this.usuario )
         .subscribe( usuario => {
           this.router.navigate(['/usuarios/listado']);
-          this.mostrarSnakbar(' Registro creado ')
+          this.mostrarSnakbar(' Fabricante eliminado! ')
         })
     }
-    window.location.reload();
+    // window.location.reload();
   }
 
   // borrarUsuario(){

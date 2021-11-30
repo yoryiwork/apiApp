@@ -35,7 +35,7 @@ export class AgregarComponent implements OnInit {
     this.fabricantesService.agregarFabricante( this.fabricante )
       .subscribe( fabricante => {
         this.router.navigate(['fabricantes']);
-        this.mostrarSnakbar( 'Registro creado' )
+        this.mostrarSnakbar( ' Fabricante creado! ' )
       })
     // window.location.reload();
   }

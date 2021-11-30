@@ -1,1 +1,62 @@
-<p>editar works!</p>
+<h1>
+    Editar impuesto
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>Descripción</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="impuesto.descrip">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Valor</mat-label>
+        <input type="number"
+               matInput
+               required
+               [(ngModel)]="impuesto.valor">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Usuario</mat-label>
+        <mat-select [(ngModel)]="impuesto.usuario">
+            <mat-option value='Eduardo'>Eduardo</mat-option>
+            <mat-option value='Jorge'>Jorge</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Tasa</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="impuesto.tasa">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Tasa cuota</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="impuesto.tasaCuota">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Tipo de impuesto</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="impuesto.tipoImpuesto">
+    </mat-form-field>
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="editar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Actualizar
+</button>
+    <button mat-raised-button
+            color="warn"
+            (click)="borrar()">
+    <mat-icon> delete </mat-icon>
+    Borrar
+</button>

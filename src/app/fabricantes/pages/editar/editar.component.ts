@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
 import { Fabricante } from 'src/app/Interfaces/fabricante.interface';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 import { FabricantesService } from '../../services/fabricantes.service';
@@ -42,7 +41,7 @@ export class EditarComponent implements OnInit {
   editar(){
     this.fabricantesService.actualizarFabricante( this.fabricante )
         .subscribe( fabricante =>  {
-          this.mostrarSnakbar( 'Registro actualizado' );
+          this.mostrarSnakbar( ' Fabricante actualizado! ' );
           window.location.reload();
         });
   }
@@ -58,7 +57,7 @@ export class EditarComponent implements OnInit {
           this.fabricantesService.borrarFabricante( this.fabricante.fabricante! )
             .subscribe( resp => {
               this.router.navigate(['/fabricantes']);
-              this.mostrarSnakbar( 'Registro eliminado' )
+              this.mostrarSnakbar( ' Fabricante eliminado! ' )
               window.location.reload();
             });
         }
