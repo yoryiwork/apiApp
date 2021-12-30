@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ClavesSatService } from '../../services/claves-sat.service';
-import { claveSat } from '../../../Interfaces/claveSAT.interface';
+import { MarcasService } from '../../services/marcas.service';
+import { Marca } from '../../../Interfaces/marca.interface';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 
 @Component({
@@ -14,22 +14,20 @@ import { ConfirmarComponent } from '../../components/confirmar/confirmar.compone
 })
 export class EditarComponent implements OnInit {
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: claveSat,
-    private dialog: MatDialog,
-    private snackBar: MatSnackBar,
-    private clavesSatService: ClavesSatService,
-    private router: Router
-  ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Marca,
+              private dialog: MatDialog,
+              private snackBar: MatSnackBar,
+              private servicio: MarcasService,
+              private router: Router ) { }
 
-  ngOnInit(): void {
-    this.claveSat = this.data;
-  }
+  ngOnInit(): void { this.objeto = this.data }
 
+  editando: boolean = false;
   color: string = 'accent';
 
-  claveSat: claveSat = {
-    descripcion: ''
+  objeto: Marca = {
+    Descrip: '',
+    Usuario: '',
   }
 
   mostrarSnakbar( mensaje: string ): void {
@@ -39,9 +37,9 @@ export class EditarComponent implements OnInit {
   }
 
   editar(){
-    this.clavesSatService.actualizarClaveSAT( this.claveSat )
-        .subscribe( clave =>  {
-          this.mostrarSnakbar( ' Clave del SAT actualizada! ' );
+    this.servicio.actualizar( this.objeto )
+        .subscribe( resp =>  {
+          this.mostrarSnakbar( ' Marca actualizada! ' );
           window.location.reload();
         });
   }
@@ -49,15 +47,15 @@ export class EditarComponent implements OnInit {
   borrar(){
     const dialog = this.dialog.open( ConfirmarComponent, {
         width: '250px',
-        data: this.claveSat
+        data: this.objeto
     });
     dialog.afterClosed().subscribe(
       ( result ) => {
         if ( result ) {
-          this.clavesSatService.borrarClaveSAT( this.claveSat.codigo! )
+          this.servicio.borrar( this.objeto.Marca! )
             .subscribe( resp => {
-              this.router.navigate(['/clavesSat']);
-              this.mostrarSnakbar( ' Clave del SAT eliminada! ' )
+              this.router.navigate(['/marcas']);
+              this.mostrarSnakbar( ' Marca eliminada! ' )
               window.location.reload();
             });
         }

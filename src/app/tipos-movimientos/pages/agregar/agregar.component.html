@@ -1,22 +1,22 @@
 <h1>
-    Agregar clave SAT
+    Agregar tipo de movimiento
 </h1>
 <br>
 <div class="container">
     <mat-form-field [color]="color">
-        <mat-label>Código</mat-label>
+        <mat-label>ID</mat-label>
         <input type="text"
                matInput
                required
-               [(ngModel)]="claveSat.codigo">
-    </mat-form-field>   
+               [(ngModel)]="tipo.id">
+    </mat-form-field>
     <mat-form-field [color]="color">
-        <mat-label>Descripción</mat-label>
+        <mat-label>Tipo</mat-label>
         <input type="text"
                matInput
                required
-               [(ngModel)]="claveSat.descripcion">
-    </mat-form-field>   
+               [(ngModel)]="tipo.tipo">
+    </mat-form-field>
 </div>
 <button mat-raised-button 
         color="primary"

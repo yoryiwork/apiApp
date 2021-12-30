@@ -20,6 +20,22 @@ const rutas: Routes = [
     loadChildren: () => import('./impuestos/impuestos.module').then(m => m.ImpuestosModule)
   },
   {
+    path: 'lineas',
+    loadChildren: () => import('./lineas/lineas.module').then(m => m.LineasModule)
+  },
+  {
+    path: 'tiposMovimientos',
+    loadChildren: () => import('./tipos-movimientos/tipos-movimientos.module').then(m => m.TiposMovimientosModule)
+  },
+  {
+    path: 'marcas',
+    loadChildren: () => import('./marcas/marcas.module').then(m => m.MarcasModule)
+  },
+  {
+    path: 'tiposProductos',
+    loadChildren: () => import('./prods-tipos/prods-tipos.module').then(m => m.ProdsTiposModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },

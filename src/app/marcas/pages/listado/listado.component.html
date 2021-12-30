@@ -1,0 +1,31 @@
+<h1>Marcas</h1>
+
+<button (click)="agregar()" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>
+    Nuevo
+</button>
+<br>
+<br>
+<table style="text-align: center;" class="responsive-table">
+    <th>Marca</th>
+    <th>Descripción</th>
+    <th>Usuario</th>
+    <th>Usuario fecha</th>
+    <th>Usuario hora</th>
+    <th>¿Está bloqueado?</th>
+    <th>Editar</th>
+    <tr *ngFor="let x of objetos">
+        <td>{{ x.Marca }}</td>
+        <td>{{ x.Descrip }}</td>
+        <td>{{ x.Usuario }}</td>
+        <td>{{ x.usuFecha }}</td>
+        <td>{{ x.usuFecha }}</td>
+        <td>{{ x.usuHora }}</td>
+        <td>{{ (x.bloqueado != 0) ? 'Sí' : 'No' }}</td>
+        <td>
+            <button mat-button (click)="editar(x)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

@@ -9,11 +9,17 @@
             </button>
         </mat-toolbar>
         <mat-nav-list>
-            <a routerLink="./usuarios"
+            <!-- <a routerLink="./usuarios"
                 mat-list-item
                 (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>supervisor_account</mat-icon>
                 <span>Usuarios</span>
+            </a> -->
+            <a routerLink="./clavesSat"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>paid</mat-icon>
+                <span>Claves del SAT</span>
             </a>
             <a routerLink="./fabricantes"
                 mat-list-item
@@ -21,17 +27,35 @@
                 <mat-icon mat-list-icon>build_circle</mat-icon>
                 <span>Fabricantes</span>
             </a>
-            <a routerLink="./clavesSat"
-                mat-list-item
-                (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>paid</mat-icon>
-                <span>Claves SAT</span>
-            </a>
             <a routerLink="./impuestos"
                 mat-list-item
                 (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>leaderboard</mat-icon>
                 <span>Impuestos</span>
+            </a>
+            <a routerLink="./marcas"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>emoji_symbols</mat-icon>
+                <span>Marcas</span>
+            </a>
+            <a routerLink="./lineas"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>dns</mat-icon>
+                <span>Lineas</span>
+            </a>
+            <a routerLink="./tiposMovimientos"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>autorenew</mat-icon>
+                <span>Tipos de movimientos</span>
+            </a>
+            <a routerLink="./tiposProductos"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>dynamic_feed</mat-icon>
+                <span>Tipos de productos</span>
             </a>
         </mat-nav-list>
     </mat-sidenav>

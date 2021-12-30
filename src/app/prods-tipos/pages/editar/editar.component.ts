@@ -2,9 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ClavesSatService } from '../../services/claves-sat.service';
-import { claveSat } from '../../../Interfaces/claveSAT.interface';
+import { TipoProducto } from '../../../Interfaces/prods_tipos.interface';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
+import { ProdsTiposService } from '../../services/prods-tipos.service';
 
 @Component({
   selector: 'app-editar',
@@ -14,22 +14,26 @@ import { ConfirmarComponent } from '../../components/confirmar/confirmar.compone
 })
 export class EditarComponent implements OnInit {
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: claveSat,
-    private dialog: MatDialog,
-    private snackBar: MatSnackBar,
-    private clavesSatService: ClavesSatService,
-    private router: Router
-  ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: TipoProducto,
+              private dialog: MatDialog,
+              private snackBar: MatSnackBar,
+              private servicio: ProdsTiposService,
+              private router: Router ) { }
 
-  ngOnInit(): void {
-    this.claveSat = this.data;
-  }
+  ngOnInit(): void { this.objeto = this.data }
 
+  editando: boolean = false;
   color: string = 'accent';
 
-  claveSat: claveSat = {
-    descripcion: ''
+  objeto: TipoProducto = {
+    TIPO: '',
+    correo: '',
+    correo2: '',
+    correo3: '',
+    correo4: '',
+    correo5: '',
+    alias: '',
+    sucursal: ''
   }
 
   mostrarSnakbar( mensaje: string ): void {
@@ -39,9 +43,9 @@ export class EditarComponent implements OnInit {
   }
 
   editar(){
-    this.clavesSatService.actualizarClaveSAT( this.claveSat )
-        .subscribe( clave =>  {
-          this.mostrarSnakbar( ' Clave del SAT actualizada! ' );
+    this.servicio.actualizar( this.objeto )
+        .subscribe( resp =>  {
+          this.mostrarSnakbar( ' Tipo de producto actualizado! ' );
           window.location.reload();
         });
   }
@@ -49,15 +53,15 @@ export class EditarComponent implements OnInit {
   borrar(){
     const dialog = this.dialog.open( ConfirmarComponent, {
         width: '250px',
-        data: this.claveSat
+        data: this.objeto
     });
     dialog.afterClosed().subscribe(
       ( result ) => {
         if ( result ) {
-          this.clavesSatService.borrarClaveSAT( this.claveSat.codigo! )
+          this.servicio.borrar( this.objeto.id_consec_sucursal! )
             .subscribe( resp => {
-              this.router.navigate(['/clavesSat']);
-              this.mostrarSnakbar( ' Clave del SAT eliminada! ' )
+              this.router.navigate(['/tiposProductos']);
+              this.mostrarSnakbar( ' Tipo de producto eliminado! ' )
               window.location.reload();
             });
         }

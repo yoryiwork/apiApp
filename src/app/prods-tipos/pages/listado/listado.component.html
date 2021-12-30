@@ -1,0 +1,50 @@
+<h1>Tipos de productos</h1>
+
+<button (click)="agregar()" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon>
+    Nuevo
+</button>
+<br>
+<br>
+<table style="text-align: center;" class="responsive-table">
+    <th>Tipo</th>
+    <th>Correo</th>
+    <th>Correo2</th>
+    <th>Correo3</th>
+    <th>Correo4</th>
+    <th>Correo5</th>
+    <th>Alias</th>
+    <th>Para pedido</th>
+    <th>¿Está bloqueado?</th>
+    <th>Días pedido</th>
+    <th>Días pedido2</th>
+    <th>¿Pedido temporal?</th>
+    <th>Sucursal</th>
+    <th>Consecutivo</th>
+    <th>ID consecutivo sucursal</th>
+    <th>Días maximos de pedido</th>
+    <th>Editar</th>
+    <tr *ngFor="let x of objetos">
+        <td>{{ x.TIPO }}</td>
+        <td>{{ x.correo }}</td>
+        <td>{{ x.correo2 }}</td>
+        <td>{{ x.correo3 }}</td>
+        <td>{{ x.correo4 }}</td>
+        <td>{{ x.correo5 }}</td>
+        <td>{{ x.alias }}</td>
+        <td>{{ x.paraPedido }}</td>
+        <td>{{ (x.bloqueado != 0) ? 'Sí' : 'No' }}</td>
+        <td>{{ x.diasPedido }}</td>
+        <td>{{ x.dias_pedido }}</td>
+        <td>{{ x.pedido_temp }}</td>
+        <td>{{ x.sucursal }}</td>
+        <td>{{ x.consec }}</td>
+        <td>{{ x.id_consec_sucursal }}</td>
+        <td>{{ x.diasPedidoMaximo }}</td>
+        <td>
+            <button mat-button (click)="editar(x)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

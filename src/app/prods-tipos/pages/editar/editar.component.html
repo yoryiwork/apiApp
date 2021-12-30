@@ -1,0 +1,125 @@
+<h1>
+    Editar tipo de producto
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>Tipo</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.TIPO">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.correo">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo2</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.correo2">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo3</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.correo3">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo4</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.correo4">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Correo5</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.correo5">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Alias</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.alias">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Para pedido</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.paraPedido">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>¿Está bloqueado?</mat-label>
+        <mat-select [(ngModel)]="objeto.bloqueado">
+            <mat-option value=1>Sí</mat-option>
+            <mat-option value=0>No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Días pedido</mat-label>
+        <input type="number"
+               matInput
+               required
+               [(ngModel)]="objeto.diasPedido">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Días pedido 2</mat-label>
+        <input type="number"
+               matInput
+               required
+               [(ngModel)]="objeto.dias_pedido">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>¿Pedido temporal?</mat-label>
+        <mat-select [(ngModel)]="objeto.pedido_temp">
+            <mat-option value=true>Sí</mat-option>
+            <mat-option value=false>No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Sucursal</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.sucursal">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>ID consecutivo sucursal</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.alias">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Días maximos de pedido</mat-label>
+        <input type="number"
+               matInput
+               required
+               [(ngModel)]="objeto.diasPedidoMaximo">
+    </mat-form-field>
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="editar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Actualizar
+</button>
+    <button mat-raised-button
+            color="warn"
+            (click)="borrar()">
+    <mat-icon> delete </mat-icon>
+    Borrar
+</button>

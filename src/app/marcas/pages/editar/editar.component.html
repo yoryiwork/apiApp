@@ -1,0 +1,55 @@
+<h1>
+    Editar marca
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>Marca</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.Marca">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Descripción</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.Descrip">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Usuario</mat-label>
+        <mat-select [(ngModel)]="objeto.Usuario">
+            <mat-option value='SUP'>SUP</mat-option>
+            <mat-option value='admin'>admin</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Usuario fecha</mat-label>
+        <input type="date"
+               matInput
+               required
+               [(ngModel)]="objeto.usuFecha">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Usuario hora</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="objeto.usuHora">
+    </mat-form-field>    
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="editar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Actualizar
+</button>
+    <button mat-raised-button
+            color="warn"
+            (click)="borrar()">
+    <mat-icon> delete </mat-icon>
+    Borrar
+</button>

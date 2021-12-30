@@ -1,0 +1,42 @@
+<h1>
+    Agregar linea
+</h1>
+<br>
+<div class="container">
+    <mat-form-field [color]="color">
+        <mat-label>Linea</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="linea.linea">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Descripción</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="linea.descrip">
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Usuario</mat-label>
+        <mat-select [(ngModel)]="linea.usuario">
+            <mat-option value='SUP'>SUP</mat-option>
+            <mat-option value='admin'>admin</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [color]="color">
+        <mat-label>Clasificación</mat-label>
+        <input type="text"
+               matInput
+               required
+               [(ngModel)]="linea.clasificacion">
+    </mat-form-field>
+</div>
+<button mat-raised-button 
+        color="primary"
+        (click)="guardar()">
+            <mat-icon>
+                 edit
+            </mat-icon> 
+            Crear 
+</button>
