@@ -64,9 +64,19 @@
         (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        Cronos
+        Cronos &nbsp;&nbsp;
         <span class="spacer"></span>
+        <div style="text-align:right"> Hola</div>
+        <label>
+            Idioma
+            <select #langSelect (change)="cambiarIdioma(langSelect.value)">
+              <option *ngFor="let idioma of idiomas" [value]="idioma.abreviacion">
+                {{ idioma.nombre }}
+              </option>
+            </select>
+          </label>
     </mat-toolbar>
+    
     <div class="container">
         <router-outlet></router-outlet> 
     </div>

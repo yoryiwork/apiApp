@@ -9,6 +9,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditarComponent } from './pages/editar/editar.component';
     FabricantesRoutingModule,
     FormsModule,
     MaterialModule,
+    TranslateModule,
   ]
 })
 export class FabricantesModule { }
