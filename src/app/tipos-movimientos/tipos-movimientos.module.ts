@@ -7,6 +7,7 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { TiposMovimientosRoutingModule } from './tipos-movimientos-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MaterialModule } from '../material/material.module';
     TiposMovimientosRoutingModule,
     FormsModule,
     MaterialModule,
+    TranslateModule,
   ]
 })
 export class TiposMovimientosModule { }
