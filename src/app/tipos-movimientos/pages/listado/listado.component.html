@@ -1,15 +1,15 @@
-<h1>Tipos de movimientos</h1>
+<h1>{{ 'Tipos de movimientos' | translate }}</h1>
 
 <button (click)="agregar()" mat-raised-button color="accent">
     <mat-icon>add</mat-icon>
-    Nuevo
+    {{ 'Nuevo' | translate }}
 </button>
 <br>
 <br>
 <table style="text-align: center;" class="responsive-table">
     <th>ID</th>
-    <th>Tipo</th>
-    <th>Editar</th>
+    <th> {{ 'Tipo' | translate }} </th>
+    <th> {{ 'Editar' | translate }} </th>
     <tr *ngFor="let x of tipos">
         <td>{{ x.id }}</td>
         <td>{{ x.tipo }}</td>

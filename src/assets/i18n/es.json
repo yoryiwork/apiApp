@@ -1,3 +1,14 @@
 {
-    "Nuevo": "Nuevo"
+    "Nuevo": "Nuevo",
+    "Nombre": "Nombre",
+
+    "Idioma": "Idioma",
+    "Inglés": "Inglés",
+    "Español": "Español",
+    
+    "Tipos de movimientos": "Tipos de movimientos",
+    "Tipo": "Tipo",
+    "Ediar": "Editar",
+
+    "Fabricantes": "Fabricantes"
 }
