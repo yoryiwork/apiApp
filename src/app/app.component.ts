@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Idioma } from './Interfaces/idioma.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< Updated upstream
-=======
+
 
   constructor(
     private translate: TranslateService
@@ -42,6 +43,6 @@ export class AppComponent {
       abreviacion: 'en'
     }
   ];
->>>>>>> Stashed changes
+
   title = 'apiApp';
 }
